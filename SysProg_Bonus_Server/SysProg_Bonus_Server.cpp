@@ -53,13 +53,17 @@ string GetMess_Pipe(int size) {
     DWORD dwRead;
     char* buff = new char[size];
     ReadFile(hPipe, buff, size, &dwRead, nullptr);
-    buff[size] = 0;
+    buff[size-1] = '\0';
     mess = buff;
-    delete[]buff;
+    delete[] buff;
     return mess;
 }
 
 string GetMess_Sock(int size) {
+    if (size <= 0) {
+        cout << "ERROR :: Failed to receive message :: ERROR";
+        return string("");
+    }
     vector <char> v(size);
     s.Receive(&v[0], size);
     return string(&v[0], size);
@@ -144,14 +148,11 @@ void FlagThread0() {
     }
 }
 
-CSocket Server;
-bool srvcrt=false;
+//CSocket Server;
+
 
 void FlagThread1() {
     
-    Server.Listen();
-    Server.Accept(s);
-
     int buff;
 
     s.Receive(&buff, sizeof(int));
@@ -179,19 +180,16 @@ void start() {
     Flag=-1;
 
     AfxSocketInit();
-    //CSocket Server;
+    CSocket Server;
     Server.Create(11111);
 
     while (true) {
-        
-        //MainMutex.lock();
         thread t1(FlagThread0);
-        thread t2(FlagThread1);
+        t1.detach();
 
-        t1.join();
-        t2.join();
-
-        //MainMutex.unlock();
+        Server.Listen();
+        Server.Accept(s);
+        FlagThread1();
 
         messHeader m;
         int vectsize = v_threads.size();
@@ -280,7 +278,7 @@ void start() {
         }
         case 1: {
             s.Send(&vectsize, sizeof(int));
-            //s.Close();
+            s.Close();
             break;
         }
         }

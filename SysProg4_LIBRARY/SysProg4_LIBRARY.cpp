@@ -116,7 +116,7 @@ extern "C" __declspec(dllexport) void __stdcall SendMess(char* mess, int adress)
     DWORD dwWrite;
     messHeader m;
     m.codeOfOperation = 2;
-    m.size = strlen(mess);
+    m.size = strlen(mess)+1;
     m.potok = adress;
 
     WriteFile(hPipe, &m, sizeof(m), &dwWrite, nullptr);
