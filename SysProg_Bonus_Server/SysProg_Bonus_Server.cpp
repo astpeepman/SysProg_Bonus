@@ -122,7 +122,6 @@ void CreatePipe()
 }
 
 void FlagThread0() {
-    CreatePipe();
     ConnectNamedPipe(hPipe, NULL);
     DWORD dwRead;
     int buff;
@@ -179,9 +178,13 @@ void start() {
 
     Flag=-1;
 
+    //Сокеты
     AfxSocketInit();
     CSocket Server;
     Server.Create(11111);
+
+    //КАНАЛЫ
+    CreatePipe();
 
     while (true) {
         thread t1(FlagThread0);
