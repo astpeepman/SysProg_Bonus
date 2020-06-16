@@ -81,7 +81,7 @@ struct messHeader
 };
 
 extern "C" __declspec(dllexport) bool __stdcall init() {
-
+	
 	AfxSocketInit();
 	S.Create();
 	if (!S.Connect("127.0.0.1", 11111))

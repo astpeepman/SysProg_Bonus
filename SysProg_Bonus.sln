@@ -11,6 +11,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SysProg5_LIBRARY", "SysProg
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "lab2_app", "lab2_app\lab2_app.csproj", "{59863DFB-57B5-40BF-B813-4BB379770A21}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ServerLIB_dll", "ServerLIB_dll\ServerLIB_dll.vcxproj", "{97BD412B-BA86-4B53-9B47-C447E910E39A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -63,6 +65,16 @@ Global
 		{59863DFB-57B5-40BF-B813-4BB379770A21}.Release|x64.Build.0 = Release|Any CPU
 		{59863DFB-57B5-40BF-B813-4BB379770A21}.Release|x86.ActiveCfg = Release|Any CPU
 		{59863DFB-57B5-40BF-B813-4BB379770A21}.Release|x86.Build.0 = Release|Any CPU
+		{97BD412B-BA86-4B53-9B47-C447E910E39A}.Debug|Any CPU.ActiveCfg = Debug|Win32
+		{97BD412B-BA86-4B53-9B47-C447E910E39A}.Debug|x64.ActiveCfg = Debug|x64
+		{97BD412B-BA86-4B53-9B47-C447E910E39A}.Debug|x64.Build.0 = Debug|x64
+		{97BD412B-BA86-4B53-9B47-C447E910E39A}.Debug|x86.ActiveCfg = Debug|Win32
+		{97BD412B-BA86-4B53-9B47-C447E910E39A}.Debug|x86.Build.0 = Debug|Win32
+		{97BD412B-BA86-4B53-9B47-C447E910E39A}.Release|Any CPU.ActiveCfg = Release|Win32
+		{97BD412B-BA86-4B53-9B47-C447E910E39A}.Release|x64.ActiveCfg = Release|x64
+		{97BD412B-BA86-4B53-9B47-C447E910E39A}.Release|x64.Build.0 = Release|x64
+		{97BD412B-BA86-4B53-9B47-C447E910E39A}.Release|x86.ActiveCfg = Release|Win32
+		{97BD412B-BA86-4B53-9B47-C447E910E39A}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
